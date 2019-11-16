@@ -1,0 +1,6 @@
+﻿= Godot script syntax highlighting for Vim
+
+Pretty much basic stuff as of now: keywords, strings, comments.
+
+Additionally commentstring is set.
+
