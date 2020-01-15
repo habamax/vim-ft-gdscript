@@ -1,6 +1,25 @@
 ﻿= Godot script syntax highlighting for Vim
+:author: Maxim Kim
+:compress:
+:experimental:
+:toc: left
+:toclevels: 3
+:icons: font
+:autofit-option:
+:sectnums:
+:sectnumlevels: 4
+:source-highlighter: rouge
+:rouge-style: github
+:!source-linenums-option:
+:revdate: 2020-01-15
+:imagesdir: images
+:pdf-style: default
+:doctype: article
+:chapter-label:
+
 
 Pretty much basic stuff as of now: keywords, strings, comments.
 
 Additionally commentstring is set.
 
+image::img_README_1.png[]
