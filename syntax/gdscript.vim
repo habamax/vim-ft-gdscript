@@ -35,6 +35,8 @@ syn keyword gdscriptBuiltinFunction range load inst2dict dict2inst hash instance
 
 syn match gdscriptFunction "\h\w*" display contained
 
+syn match gdscriptNode "\$\h\w*"
+
 syn match gdscriptComment "#.*$" contains=@Spell
 
 syn region gdscriptString matchgroup=gdscriptQuotes
@@ -73,6 +75,7 @@ hi def link gdscriptString String
 hi def link gdscriptQuotes String
 hi def link gdscriptTripleQuotes String
 hi def link gdscriptEscape Special
+hi def link gdscriptNode Special
 hi def link gdscriptType Type
 hi def link gdscriptNumber Number
 
