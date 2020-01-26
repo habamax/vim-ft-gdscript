@@ -32,7 +32,6 @@ syn keyword gdscriptBuiltinFunction char str var2str str2var var2bytes bytes2var
 syn keyword gdscriptBuiltinFunction print prints printt printerr printraw print_stack
 syn keyword gdscriptBuiltinFunction range load inst2dict dict2inst hash instance_from_id
 
-
 syn match gdscriptFunction "\h\w*" display contained
 
 syn match gdscriptNode "\$\h\w*"
@@ -64,8 +63,8 @@ syn match   gdscriptNumber
 
 
 hi def link gdscriptKeyword Keyword
-hi def link gdscriptConditional Conditional
-hi def link gdscriptRepeat Repeat
+hi def link gdscriptConditional Keyword
+hi def link gdscriptRepeat Keyword
 hi def link gdscriptOperator Operator
 hi def link gdscriptConstant Constant
 hi def link gdscriptFunction Function
