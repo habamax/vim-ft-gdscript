@@ -18,8 +18,4 @@
 :chapter-label:
 
 
-Pretty much basic stuff as of now: keywords, strings, comments.
-
-Additionally commentstring is set.
-
 image::img_README_1.png[]
