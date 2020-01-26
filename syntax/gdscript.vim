@@ -48,6 +48,18 @@ syn region gdscriptString matchgroup=gdscriptTripleQuotes
 syn match gdscriptEscape +\\[abfnrtv'"\\]+ contained
 syn match gdscriptEscape "\\$"
 
+" Numbers
+syn match   gdscriptNumber	"\<0[oO]\=\o\+[Ll]\=\>"
+syn match   gdscriptNumber	"\<0[xX]\x\+[Ll]\=\>"
+syn match   gdscriptNumber	"\<0[bB][01]\+[Ll]\=\>"
+syn match   gdscriptNumber	"\<\%([1-9]\d*\|0\)[Ll]\=\>"
+syn match   gdscriptNumber	"\<\d\+[jJ]\>"
+syn match   gdscriptNumber	"\<\d\+[eE][+-]\=\d\+[jJ]\=\>"
+syn match   gdscriptNumber
+\ "\<\d\+\.\%([eE][+-]\=\d\+\)\=[jJ]\=\%(\W\|$\)\@="
+syn match   gdscriptNumber
+\ "\%(^\|\W\)\zs\d*\.\d\+\%([eE][+-]\=\d\+\)\=[jJ]\=\>"
+
 
 hi def link gdscriptKeyword Keyword
 hi def link gdscriptConditional Conditional
@@ -62,6 +74,8 @@ hi def link gdscriptQuotes String
 hi def link gdscriptTripleQuotes String
 hi def link gdscriptEscape Special
 hi def link gdscriptType Type
+hi def link gdscriptNumber Number
+
 
 
 let b:current_syntax = "gdscript"
