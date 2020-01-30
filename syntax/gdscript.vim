@@ -10,13 +10,13 @@ endif
 syn keyword gdscriptKeyword false null true
 syn keyword gdscriptKeyword static const enum var signal
 syn keyword gdscriptKeyword class func nextgroup=gdscriptFunction skipwhite
-syn keyword gdscriptKeyword extends setget self return yield class_name
+syn keyword gdscriptKeyword extends setget self return yield class_name pass
 syn keyword gdscriptKeyword tool onready export preload
 syn keyword gdscriptKeyword breakpoint assert
 syn keyword gdscriptKeyword remote master puppet remotesync mastersync puppetsync sync
+syn keyword gdscriptKeyword is as not and or in
 syn keyword gdscriptConditional if else elif match switch case
 syn keyword gdscriptRepeat for while break continue
-syn keyword gdscriptOperator is as not and or
 syn keyword gdscriptConstant PI TAU INF NAN
 syn keyword gdscriptType void bool int float
 syn keyword gdscriptBuiltinFunction sin cos tan sinh cosh tanh asin acos atan atan2
@@ -26,7 +26,7 @@ syn keyword gdscriptBuiltinFunction abs sign pow log exp is_nan is_inf
 syn keyword gdscriptBuiltinFunction ease decimals stepify lerp dectime
 syn keyword gdscriptBuiltinFunction randomize randi randf rand_range seed rand_seed
 syn keyword gdscriptBuiltinFunction deg2rad rad2deg linear2db db2linear
-syn keyword gdscriptBuiltinFunction max min clamp
+syn keyword gdscriptBuiltinFunction max min clamp len
 syn keyword gdscriptBuiltinFunction nearest_po2 weakref funcref convert typeof type_exists
 syn keyword gdscriptBuiltinFunction char str var2str str2var var2bytes bytes2var
 syn keyword gdscriptBuiltinFunction print prints printt printerr printraw print_stack
@@ -65,7 +65,6 @@ syn match   gdscriptNumber
 hi def link gdscriptKeyword Keyword
 hi def link gdscriptConditional Keyword
 hi def link gdscriptRepeat Keyword
-hi def link gdscriptOperator Operator
 hi def link gdscriptConstant Constant
 hi def link gdscriptFunction Function
 hi def link gdscriptBuiltinFunction Function
