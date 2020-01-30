@@ -31,6 +31,7 @@ syn keyword gdscriptBuiltinFunction nearest_po2 weakref funcref convert typeof t
 syn keyword gdscriptBuiltinFunction char str var2str str2var var2bytes bytes2var
 syn keyword gdscriptBuiltinFunction print prints printt printerr printraw print_stack
 syn keyword gdscriptBuiltinFunction range load inst2dict dict2inst hash instance_from_id
+syn keyword gdscriptBuiltinFunction parse_json to_json
 
 syn match gdscriptFunction "\h\w*" display contained
 
