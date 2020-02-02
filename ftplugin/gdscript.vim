@@ -12,6 +12,7 @@ let b:undo_ftplugin = 'setlocal cinkeys<'
       \ . '|setlocal commentstring<'
       \ . '|setlocal suffixesadd<'
       \ . '|setlocal expandtab<'
+      \ . '|setlocal foldexpr<'
 
 setlocal cinkeys-=0#
 setlocal indentkeys-=0#
@@ -19,7 +20,7 @@ setlocal suffixesadd=.gd
 setlocal commentstring=#\ %s
 
 
-set foldexpr=GDScriptFoldLevel()
+setlocal foldexpr=GDScriptFoldLevel()
 func! GDScriptFoldLevel() abort
     let indent = indent(v:lnum)/&sw
     let indent_next = indent(nextnonblank(v:lnum+1))/&sw
