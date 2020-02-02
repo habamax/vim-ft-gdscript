@@ -18,5 +18,20 @@ setlocal indentkeys-=0#
 setlocal suffixesadd=.gd
 setlocal commentstring=#\ %s
 
+
+set foldexpr=GDScriptFoldLevel()
+func! GDScriptFoldLevel() abort
+    let indent = indent(v:lnum)/&sw
+    let indent_next = indent(nextnonblank(v:lnum+1))/&sw
+    if indent_next > indent && getline(v:lnum) !~ '^\s*$'
+        return ">" . (indent+1)
+    elseif indent != 0
+        return indent
+    else 
+        return -1
+    endif
+endfunc
+
+
 let &cpo = s:keepcpo
 unlet s:keepcpo
