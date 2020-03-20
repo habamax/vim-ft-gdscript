@@ -7,14 +7,6 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syn keyword gdscriptKeyword false null true
-syn keyword gdscriptKeyword static const enum var signal
-syn keyword gdscriptKeyword class func nextgroup=gdscriptFunction skipwhite
-syn keyword gdscriptKeyword extends setget self return yield class_name pass
-syn keyword gdscriptKeyword tool onready export preload
-syn keyword gdscriptKeyword breakpoint assert
-syn keyword gdscriptKeyword remote master puppet remotesync mastersync puppetsync sync
-syn keyword gdscriptKeyword is as not and or in
 syn keyword gdscriptConditional if else elif match switch case
 syn keyword gdscriptRepeat for while break continue
 syn keyword gdscriptConstant PI TAU INF NAN
@@ -32,10 +24,29 @@ syn keyword gdscriptBuiltinFunction char str var2str str2var var2bytes bytes2var
 syn keyword gdscriptBuiltinFunction print prints printt printerr printraw print_stack
 syn keyword gdscriptBuiltinFunction range load inst2dict dict2inst hash instance_from_id
 syn keyword gdscriptBuiltinFunction parse_json to_json
+syn keyword gdscriptBuiltinClass Input InputEventAction
+syn keyword gdscriptBuiltinClass OS
+syn keyword gdscriptBuiltinClass Tween Sprite Texture Node Color
+syn keyword gdscriptBuiltinStruct Color
+syn keyword gdscriptKeyword false null true
+syn keyword gdscriptKeyword static const enum var signal
+syn keyword gdscriptKeyword class func nextgroup=gdscriptFunction skipwhite
+syn keyword gdscriptKeyword extends nextgroup=gdscriptExtend skipwhite
+syn keyword gdscriptKeyword class_name nextgroup=gdscriptClass skipwhite
+syn keyword gdscriptKeyword setget self return yield pass
+syn keyword gdscriptKeyword tool onready export preload
+syn keyword gdscriptKeyword breakpoint assert
+syn keyword gdscriptKeyword remote master puppet remotesync mastersync puppetsync sync
+syn keyword gdscriptKeyword is as not and or in
+syn keyword gdscriptKeyword str int
 
 syn match gdscriptFunction "\h\w*" display contained
+syn match gdscriptExtend "\h\w*" display contained
+syn match gdscriptClass "\h\w*" display contained
 
-syn match gdscriptNode "\$\h\w*"
+syn match gdscriptNode "\$\h\w*\%(/\h\w*\)*"
+
+syn match gdscriptSpecial "[():=]"
 
 syn match gdscriptComment "#.*$" contains=@Spell
 
@@ -51,13 +62,13 @@ syn match gdscriptEscape +\\[abfnrtv'"\\]+ contained
 syn match gdscriptEscape "\\$"
 
 " Numbers
-syn match   gdscriptNumber	"\<0[oO]\=\o\+[Ll]\=\>"
-syn match   gdscriptNumber	"\<0[xX]\x\+[Ll]\=\>"
-syn match   gdscriptNumber	"\<0[bB][01]\+[Ll]\=\>"
-syn match   gdscriptNumber	"\<\%([1-9]\d*\|0\)[Ll]\=\>"
-syn match   gdscriptNumber	"\<\d\+[jJ]\>"
-syn match   gdscriptNumber	"\<\d\+[eE][+-]\=\d\+[jJ]\=\>"
-syn match   gdscriptNumber
+syn match gdscriptNumber "\<0[oO]\=\o\+[Ll]\=\>"
+syn match gdscriptNumber "\<0[xX]\x\+[Ll]\=\>"
+syn match gdscriptNumber "\<0[bB][01]\+[Ll]\=\>"
+syn match gdscriptNumber "\<\%([1-9]\d*\|0\)[Ll]\=\>"
+syn match gdscriptNumber "\<\d\+[jJ]\>"
+syn match gdscriptNumber "\<\d\+[eE][+-]\=\d\+[jJ]\=\>"
+syn match gdscriptNumber
 \ "\<\d\+\.\%([eE][+-]\=\d\+\)\=[jJ]\=\%(\W\|$\)\@="
 syn match   gdscriptNumber
 \ "\%(^\|\W\)\zs\d*\.\d\+\%([eE][+-]\=\d\+\)\=[jJ]\=\>"
@@ -68,15 +79,20 @@ hi def link gdscriptConditional Keyword
 hi def link gdscriptRepeat Keyword
 hi def link gdscriptConstant Constant
 hi def link gdscriptFunction Function
+hi def link gdscriptExtend Constant
+hi def link gdscriptClass Type
 hi def link gdscriptBuiltinFunction Function
+hi def link gdscriptBuiltinClass Structure
+hi def link gdscriptBuiltinStruct Typedef
 hi def link gdscriptComment Comment
 hi def link gdscriptString String
 hi def link gdscriptQuotes String
 hi def link gdscriptTripleQuotes String
 hi def link gdscriptEscape Special
-hi def link gdscriptNode Special
+hi def link gdscriptNode PreProc
 hi def link gdscriptType Type
 hi def link gdscriptNumber Number
+hi def link gdscriptSpecial Special
 
 
 
