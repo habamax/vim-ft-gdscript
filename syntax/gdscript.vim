@@ -7,8 +7,8 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syn keyword gdscriptConditional if else elif match switch case
-syn keyword gdscriptRepeat for while break continue
+syn keyword gdscriptConditional if else elif match switch case is as not and or
+syn keyword gdscriptRepeat for while break continue in
 syn keyword gdscriptConstant PI TAU INF NAN
 syn keyword gdscriptType void bool int float
 syn keyword gdscriptBuiltinFunction sin cos tan sinh cosh tanh asin acos atan atan2
@@ -24,21 +24,23 @@ syn keyword gdscriptBuiltinFunction char str var2str str2var var2bytes bytes2var
 syn keyword gdscriptBuiltinFunction print prints printt printerr printraw print_stack
 syn keyword gdscriptBuiltinFunction range load inst2dict dict2inst hash instance_from_id
 syn keyword gdscriptBuiltinFunction parse_json to_json
+syn keyword gdscriptBuiltinFunction str int
+syn keyword gdscriptBuiltinFunction preload yield
+
 syn keyword gdscriptBuiltinClass Input InputEventAction
 syn keyword gdscriptBuiltinClass OS
 syn keyword gdscriptBuiltinClass Tween Sprite Texture Node Color
 syn keyword gdscriptBuiltinStruct Color
-syn keyword gdscriptKeyword false null true
-syn keyword gdscriptKeyword static const enum var signal
-syn keyword gdscriptKeyword class func nextgroup=gdscriptFunction skipwhite
-syn keyword gdscriptKeyword extends nextgroup=gdscriptExtend skipwhite
-syn keyword gdscriptKeyword class_name nextgroup=gdscriptClass skipwhite
-syn keyword gdscriptKeyword setget self return yield pass
-syn keyword gdscriptKeyword tool onready export preload
-syn keyword gdscriptKeyword breakpoint assert
-syn keyword gdscriptKeyword remote master puppet remotesync mastersync puppetsync sync
-syn keyword gdscriptKeyword is as not and or in
-syn keyword gdscriptKeyword str int
+
+syn keyword gdscriptKeyword false null true self 
+
+syn keyword gdscriptStatement class_name nextgroup=gdscriptClass skipwhite
+syn keyword gdscriptStatement class func nextgroup=gdscriptFunction skipwhite
+syn keyword gdscriptStatement extends nextgroup=gdscriptExtend skipwhite
+syn keyword gdscriptStatement remote master puppet remotesync mastersync puppetsync sync
+syn keyword gdscriptStatement setget return pass
+syn keyword gdscriptStatement static const enum var signal
+syn keyword gdscriptStatement breakpoint assert
 
 syn match gdscriptFunction "\h\w*" display contained
 syn match gdscriptExtend "\h\w*" display contained
@@ -74,12 +76,13 @@ syn match   gdscriptNumber
 \ "\%(^\|\W\)\zs\d*\.\d\+\%([eE][+-]\=\d\+\)\=[jJ]\=\>"
 
 
+hi def link gdscriptStatement Statement
 hi def link gdscriptKeyword Keyword
-hi def link gdscriptConditional Keyword
-hi def link gdscriptRepeat Keyword
+hi def link gdscriptConditional Conditional
+hi def link gdscriptRepeat Repeat
 hi def link gdscriptConstant Constant
 hi def link gdscriptFunction Function
-hi def link gdscriptExtend Constant
+hi def link gdscriptExtend Type
 hi def link gdscriptClass Type
 hi def link gdscriptBuiltinFunction Function
 hi def link gdscriptBuiltinClass Structure
@@ -89,7 +92,7 @@ hi def link gdscriptString String
 hi def link gdscriptQuotes String
 hi def link gdscriptTripleQuotes String
 hi def link gdscriptEscape Special
-hi def link gdscriptNode PreProc
+hi def link gdscriptNode Constant
 hi def link gdscriptType Type
 hi def link gdscriptNumber Number
 hi def link gdscriptSpecial Special
