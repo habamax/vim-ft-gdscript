@@ -82,8 +82,8 @@ hi def link gdscriptConditional Conditional
 hi def link gdscriptRepeat Repeat
 hi def link gdscriptConstant Constant
 hi def link gdscriptFunction Function
-hi def link gdscriptExtend Type
-hi def link gdscriptClass Type
+hi def link gdscriptExtend Define
+hi def link gdscriptClass Define
 hi def link gdscriptBuiltinFunction Function
 hi def link gdscriptBuiltinClass Structure
 hi def link gdscriptBuiltinStruct Typedef
@@ -92,7 +92,7 @@ hi def link gdscriptString String
 hi def link gdscriptQuotes String
 hi def link gdscriptTripleQuotes String
 hi def link gdscriptEscape Special
-hi def link gdscriptNode Constant
+hi link gdscriptNode PreProc
 hi def link gdscriptType Type
 hi def link gdscriptNumber Number
 hi def link gdscriptSpecial Special
