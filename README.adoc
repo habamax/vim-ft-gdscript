@@ -2,12 +2,8 @@
 :author: Maxim Kim
 :compress:
 :experimental:
-:toc: left
-:toclevels: 3
 :icons: font
 :autofit-option:
-:sectnums:
-:sectnumlevels: 4
 :source-highlighter: rouge
 :rouge-style: github
 :!source-linenums-option:
