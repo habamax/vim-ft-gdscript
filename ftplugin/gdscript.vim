@@ -4,7 +4,7 @@
 
 if exists("b:did_ftplugin") | finish | endif
 let b:did_ftplugin = 1
-let s:keepcpo= &cpo
+let s:keepcpo = &cpo
 set cpo&vim
 
 let b:undo_ftplugin = 'setlocal cinkeys<'
@@ -13,14 +13,15 @@ let b:undo_ftplugin = 'setlocal cinkeys<'
       \ . '|setlocal suffixesadd<'
       \ . '|setlocal expandtab<'
       \ . '|setlocal foldexpr<'
+      \ . '|setlocal foldignore<'
 
 setlocal cinkeys-=0#
 setlocal indentkeys-=0#
 setlocal suffixesadd=.gd
 setlocal commentstring=#\ %s
-
-
+setlocal foldignore=
 setlocal foldexpr=GDScriptFoldLevel()
+
 func! GDScriptFoldLevel() abort
     let indent = indent(v:lnum)/&sw
     let indent_next = indent(nextnonblank(v:lnum+1))/&sw
