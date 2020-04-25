@@ -41,6 +41,7 @@ syn keyword gdscriptStatement remote master puppet remotesync mastersync puppets
 syn keyword gdscriptStatement setget return pass
 syn keyword gdscriptStatement static const enum var signal
 syn keyword gdscriptStatement breakpoint assert
+syn keyword gdscriptStatement onready export
 
 syn match gdscriptFunction "\h\w*" display contained
 syn match gdscriptExtend "\h\w*" display contained
